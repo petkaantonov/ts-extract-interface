@@ -9,7 +9,7 @@
         "url": "https://github.com/rilut/ts-extract-interface.git"
     },
     "engines": {
-        "vscode": "^1.24.0"
+        "vscode": "^1.34.0"
     },
     "categories": [
         "Other"
@@ -17,7 +17,7 @@
     "activationEvents": [
         "onCommand:extension.writeExtracted"
     ],
-    "main": "./extension",
+    "main": "./out/extension.js",
     "contributes": {
         "commands": [
             {
@@ -36,13 +36,15 @@
         }
     },
     "scripts": {
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./"
     },
     "dependencies": {
+        "typescript": "*",
         "typescript-parser": "*"
     },
     "devDependencies": {
+        "@types/node": "^18.11.9",
         "vscode": "*"
     }
 }

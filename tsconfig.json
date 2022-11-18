@@ -1,15 +1,12 @@
 {
-    "compilerOptions": {
-        "allowJs": true,
-        "checkJs": true, /* Typecheck .js files. */
-        "lib": [
-            "esnext"
-        ],
-        "module": "commonjs",
-        "noEmit": true,
-        "target": "esnext"
-    },
-    "exclude": [
-        "node_modules"
-    ]
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "es2020",
+		"lib": ["es2020"],
+		"outDir": "out",
+		"sourceMap": true,
+		"strict": true,
+		"rootDir": "src"
+	},
+	"exclude": ["node_modules", ".vscode-test"]
 }
